@@ -77,7 +77,6 @@ const getEnd = async (url = '',data = {})=>{
         ws = new WebSocket(link+"/"+endPoint.roomName+"?"+myNum);
         webSkts[0] = ws;
         ws.addEventListener("open",() => {
-          if (!sync) checkTurn(turn);
           if (endPoint.moves) {
             sync = 1;
             stop = 0;
@@ -87,6 +86,7 @@ const getEnd = async (url = '',data = {})=>{
             sync = 0;
             stop = 1;
           }
+          if (!sync) checkTurn(turn);
           console.log("WebSocket Connected");
         });
         ws.addEventListener("message",(event)=>{
