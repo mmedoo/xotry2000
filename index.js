@@ -70,7 +70,7 @@ function clientJoin(req,res) {
   }
   roomName = req.body.room;
       clients++;
-      let porto = Object.keys(rooms).length+'0'+clients+'0'+rooms[roomName].length+1+'';
+      let porto = Object.keys(rooms).length+'0'+clients+'0'+rooms[roomName].length+1;
       let moves = rooms[roomName][0];
       res.send({porto,roomName,moves});
 }
