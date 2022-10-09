@@ -64,7 +64,7 @@ function addRoom(req,res) {
 app.post('/join',clientJoin);
 function clientJoin(req,res) {
   let roomName = req.body.room.toString();
-  if (Object.keys(rooms).length-1 == 0 || !rooms.hasOwnProperty(roomName)) {
+  if (Object.keys(rooms).length == 0 || !rooms.hasOwnProperty(roomName)) {
     res.send(false);
     return;
   }
